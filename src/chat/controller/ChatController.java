@@ -1,6 +1,7 @@
 package chat.controller;
 
 import chat.view.ChatView;
+import chat.model.Chatbot; 
 
 /**
  * Application controller for the Chatbot project
@@ -11,10 +12,19 @@ import chat.view.ChatView;
 
 public class ChatController 
 {	
-	private ChatView myDisplay;
+	private ChatView display;
+	private Chatbot myBot;
 
-	public void start()
+	public ChatController()
 	{
+		display = new ChatView();
+		String userName = display.getChatInput("What is your name?");
+		myBot = new Chatbot(userName);
 		
 	}
+	public void start()
+	{
+		display.displayText("Hello " + myBot.getUserName());
+	}
 }
+
