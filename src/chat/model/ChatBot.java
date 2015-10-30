@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class Chatbot
 {
-	private ArrayList<String> memesList;
+	private ArrayList<String> memeList;
 	private ArrayList<String> politicalTopicList;
 	private String userName;
 	private String content;
@@ -22,6 +22,9 @@ public class Chatbot
 	public Chatbot(String userName)
 	{
 		this.userName = userName;
+		this.memeList = new ArrayList<String>();
+		this.politicalTopicList = new ArrayList<String>();
+		this.content = "Motivational";
 		
 	}
 	
@@ -58,6 +61,11 @@ public class Chatbot
 	 */
 	public boolean contentChecker(String currentInput)
 	{
+		Boolean hasContent = false;
+		if(currentInput.toLowerCase().contains(content.toLowerCase()))
+		{
+			hasContent = true; 
+		}
 		return false;
 	}
 	
@@ -80,7 +88,15 @@ public class Chatbot
 	 */
 	public boolean memeChecker(String currentInput)
 	{
-		return false;
+		Boolean hasMeme = false;
+		for (String currentMeme: memeList)
+		{
+			if (currentMeme.equalsIgnoreCase(currentInput))
+			{
+				hasMeme = true;
+			}
+		}
+		return hasMeme;
 	}
 	
 	/**
