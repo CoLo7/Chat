@@ -28,9 +28,18 @@ public class Chatbot
 		
 	}
 	
-	private void buildMemesList()
+	private void buildMemeList()
 	{
-		
+		this.memeList.add("cute animals");
+		this.memeList.add("doge");
+		this.memeList.add("troll");
+		this.memeList.add("unhelpful highschool teacher");
+		this.memeList.add("spoderman");
+		this.memeList.add("");
+		this.memeList.add("bad luck brian");
+		this.memeList.add("aliens");
+		this.memeList.add("john cena");
+		this.memeList.add("gaben");
 	}
 	
 	private void buildPoliticalTopicsList()
@@ -89,9 +98,10 @@ public class Chatbot
 	public boolean memeChecker(String currentInput)
 	{
 		Boolean hasMeme = false;
-		for (String currentMeme: memeList)
+		
+		for (String meme: memeList)
 		{
-			if (currentMeme.equalsIgnoreCase(currentInput))
+			if (currentInput.toLowerCase().contains(meme.toLowerCase()));
 			{
 				hasMeme = true;
 			}

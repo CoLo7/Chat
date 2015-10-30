@@ -45,5 +45,11 @@ public class ChatController
 			conversation = display.getChatInput(conversation);
 		}
 	}
+	
+	private void shutDown()
+	{
+		
+	}
+
 }
 
