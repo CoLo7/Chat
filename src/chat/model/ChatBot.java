@@ -75,7 +75,7 @@ public class Chatbot
 		{
 			hasContent = true; 
 		}
-		return false;
+		return hasContent;
 	}
 	
 	/**
