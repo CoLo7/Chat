@@ -18,7 +18,7 @@ public class ChatController
 	public ChatController()
 	{
 		display = new ChatView();
-		String userName = display.getChatInput("What is your name?");
+		String userName = display.collectUserText("What is your name?");
 		myBot = new Chatbot(userName);
 		
 	}
@@ -30,25 +30,17 @@ public class ChatController
 	
 	private void chat()
 	{
-		String conversation = display.getChatInput("Waht would you like to talk about today?");
+		String conversation = display.collectUserText("What would you like to talk about today?");
 		while(myBot.lengthChecker(conversation))
 		{
-			if(myBot.contentChecker(conversation))
-			{
-				display.displayText("Wow, I had no idea you loved " + myBot.getContent());
-			}
-			else if(myBot.memeChecker(conversation))
-			{
-				display.displayText("What a lame meme:(");
-			}
+			conversation = display.collectUserText(myBot.processConversation(conversation));
 			
-			conversation = display.getChatInput(conversation);
 		}
 	}
 	
 	private void shutDown()
 	{
-		
+	
 	}
 
 }

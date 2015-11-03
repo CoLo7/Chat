@@ -10,7 +10,7 @@ public class ChatView
 	}
 	
 	
-	public String getChatInput (String currentText)
+	public String collectUserText (String currentText)
 	{
 		String returnedText = "";
 		returnedText =  JOptionPane.showInputDialog(null, currentText);

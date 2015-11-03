@@ -127,6 +127,51 @@ public class Chatbot
 		return null;
 	}
 	
+	public String processConversation(String currentInput)
+	{
+		String nextConversation = "oh, what else are you interested in talking about today?";
+		int randomTopic = (int) (Math.random() * 5); //Generates random number between 0-4.
+		
+		switch (randomTopic)
+		{
+		case 0:
+			if(memeChecker(currentInput))
+			{
+				nextConversation = "That is a very popular meme this year. What else are you wanting to talk about";
+			}
+			break;
+		case 1:
+			if(politicalTopicChecker(currentInput))
+			{
+				nextConversation = "some words and a question";
+			}
+				
+			break;
+		case 2:
+			if(contentChecker(currentInput))
+			{
+				nextConversation = "some words and question";
+			}
+			break;
+		case 3:
+			if(currentInput.length() > 20)
+			{
+				nextConversation = "some words and question";
+			}
+			break;
+		case 4:
+			nextConversation = "some wods and a question";
+			break;
+		default:
+			nextConversation = "The universe has ended sad panda";
+			
+			break;
+		}
+		
+		return nextConversation;
+		
+	}
+	
 	/**
 	 * Getter method for the memesList object.
 	 * @return The reference to the meme list.
