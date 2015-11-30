@@ -83,6 +83,7 @@ public class Chatbot
 	 * @return Whether it matches the content area.
 	 */
 	public boolean contentChecker(String currentInput)
+
 	{
 		Boolean hasContent = false;
 		if(currentInput.toLowerCase().contains(content.toLowerCase()))
@@ -91,7 +92,25 @@ public class Chatbot
 		}
 		return hasContent;
 	}
+	public boolean quitChecker(String currentInput)
+	{
+		Boolean didQuit = false;
+		if (currentInput.equals("quit"))
+		{
+			didQuit = true;
+		}
+		return didQuit;
+	}
 	
+	public boolean KeyboardMashChecker(String currentInput)
+	{
+		boolean mashTyping = false;
+		if(currentInput.equals('sdf'))
+		{
+			mashTyping = true;
+		}
+		return mashTyping;
+	}
 	/**
 	 * Checks if supplied String matches ANY of the topics in the politicalTopicsList. Returns
 	 * true if it does find a match and false if it does not match.

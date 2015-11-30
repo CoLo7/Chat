@@ -1,5 +1,6 @@
 package chat.controller;
 
+import chat.view.ChatFrame;
 import chat.view.ChatView;
 import chat.model.Chatbot; 
 
@@ -9,17 +10,19 @@ import chat.model.Chatbot;
  * @version 1.11 10/21/15 fixed error 
  */
 
-
 public class ChatController 
 {	
-	private ChatView display;
 	private Chatbot myBot;
+	private ChatView display;
+	private ChatFrame baseFrame;
+	
 
 	public ChatController()
 	{
 		display = new ChatView();
 		String userName = display.collectUserText("What is your name?");
 		myBot = new Chatbot(userName);
+		baseFrame = new ChatFrame(this);
 		
 	}
 	public void start()
@@ -33,6 +36,7 @@ public class ChatController
 		String conversation = display.collectUserText("What would you like to talk about today?");
 		while(myBot.lengthChecker(conversation))
 		{
+			conversation = myBot.processConversation(conversation);
 			conversation = display.collectUserText(myBot.processConversation(conversation));
 			
 		}
@@ -40,8 +44,18 @@ public class ChatController
 	
 	private void shutDown()
 	{
-	
+		display.displayText("goodbye, " + myBot.getUserName() + " it has been a pleasure good sir/miss");
+		System.exit(0);
 	}
 
+	public Chatbot getChatbot()
+	{
+		return myBot;
+	}
+	
+	public Chatbot setChatbot()
+	{
+		return myBot;
+	}
 }
 
