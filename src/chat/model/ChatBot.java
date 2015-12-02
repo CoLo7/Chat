@@ -105,7 +105,7 @@ public class Chatbot
 	public boolean KeyboardMashChecker(String currentInput)
 	{
 		boolean mashTyping = false;
-		if(currentInput.equals('sdf'))
+		if(currentInput.equals("sdf"))
 		{
 			mashTyping = true;
 		}

@@ -19,7 +19,7 @@ public class ChatPanel extends JPanel
 		this.baseController = baseController;
 		baseLayout = new SpringLayout();
 		chatArea = new JTextArea(10, 30);
-		typingFeld = new JTextField(30);
+		typingField = new JTextField(30);
 		promptLabel = new JLabel("Chat with me");
 		submitButton = new JButton("asda");
 		
@@ -40,4 +40,7 @@ public class ChatPanel extends JPanel
 		typingField.setToolTipText("type here for chatbot");
 		chatArea.setEnabled(false);
 	}
+	private void setupListeners()
+	{}
+	
 }
