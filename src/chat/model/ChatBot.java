@@ -165,6 +165,11 @@ public class Chatbot
 		String nextConversation = "oh, what else are you interested in talking about today?";
 		int randomTopic = (int) (Math.random() * 5); //Generates random number between 0-4.
 		
+		if(keyboardMashChecker(currentInput))
+		{
+			return "stop mashing the keybaord!!";
+		}
+		
 		switch (randomTopic)
 		{
 		case 0:
@@ -205,6 +210,12 @@ public class Chatbot
 		
 	}
 	
+	public boolean keyboardMashChecker(String currentInput) 
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	/**
 	 * Getter method for the memesList object.
 	 * @return The reference to the meme list.
