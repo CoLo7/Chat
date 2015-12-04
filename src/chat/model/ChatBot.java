@@ -99,6 +99,7 @@ public class Chatbot
 		{
 			didQuit = true;
 		}
+		
 		return didQuit;
 	}
 	
@@ -119,7 +120,16 @@ public class Chatbot
 	 */
 	public boolean politicalTopicChecker(String currentInput)
 	{
-		return false;
+		boolean hasTopic = false;
+		
+		for(String currentTopic: politicalTopicList)
+		{
+			if(currentTopic.equalsIgnoreCase(currentInput))
+			{
+				hasTopic = true;
+			}
+		}
+		return hasTopic;
 	}
 	
 	
@@ -142,6 +152,19 @@ public class Chatbot
 		return hasMeme;
 	}
 	
+	public boolean keyboardMashChecker(String currentInput) 
+	{
+		// TODO Auto-generated method stub
+		boolean mashTyping = false;
+		
+		if(currentInput.equals("sdf") || currentInput.equals("dfg") || currentInput.equals("cvb") || currentInput.equals(",./"))
+		{
+			mashTyping = true;
+		} 
+		
+		return mashTyping;	
+	}
+	
 	/**
 	 * Returns the username of this Chatbot instance.
 	 * @return The username of the Chatbot.
@@ -161,7 +184,7 @@ public class Chatbot
 	}
 	
 	public String processConversation(String currentInput)
-	{
+		{
 		String nextConversation = "oh, what else are you interested in talking about today?";
 		int randomTopic = (int) (Math.random() * 5); //Generates random number between 0-4.
 		
@@ -169,7 +192,6 @@ public class Chatbot
 		{
 			return "stop mashing the keybaord!!";
 		}
-		
 		switch (randomTopic)
 		{
 		case 0:
@@ -181,7 +203,7 @@ public class Chatbot
 		case 1:
 			if(politicalTopicChecker(currentInput))
 			{
-				nextConversation = "some words and a question";
+				nextConversation = "";
 			}
 				
 			break;
@@ -208,12 +230,6 @@ public class Chatbot
 		
 		return nextConversation;
 		
-	}
-	
-	public boolean keyboardMashChecker(String currentInput) 
-	{
-		// TODO Auto-generated method stub
-		return false;
 	}
 
 	/**

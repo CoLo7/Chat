@@ -33,7 +33,7 @@ public class ChatController
 	
 	private void chat()
 	{
-		String conversation = display.collectUserText("What would you like to talk about today?");
+		//String conversation = display.collectUserText("What would you like to talk about today?");
 		//while(myBot.lengthChecker(conversation))
 		//{
 		//	conversation = myBot.processConversation(conversation);
@@ -63,14 +63,33 @@ public class ChatController
 		System.exit(0);
 	}
 
-	public Chatbot getChatbot()
+	public Chatbot getChatbot() 
 	{
 		return myBot;
+	}
+	public ChatView getChatView() 
+	{
+		return display;
+	}
+	public ChatFrame getBaseFrame() 
+	{
+		return baseFrame;
 	}
 	
-	public Chatbot setChatbot()
+	public void setMyBot(Chatbot myBot) 
 	{
-		return myBot;
+		this.myBot = myBot;
 	}
+	
+	public void setDisplay(ChatView display) 
+	{
+		this.display = display;
+	}
+	
+	public void setBaseFrame(ChatFrame baseFrame) 
+	{
+		this.baseFrame = baseFrame;
+	}
+	
 }
 
