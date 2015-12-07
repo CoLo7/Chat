@@ -41,7 +41,7 @@ public class ChatController
 		//	
 		//}
 	}
-	
+	//sees if user wanted to quit and if they do it shutsdown if not then it jumps to the processConversation method.
 	public String userToChatbot(String conversation)
 	{
 		String response = "";
@@ -56,7 +56,7 @@ public class ChatController
 		
 		return response;
 	}
-	
+	//If user types in quit then it displays goodbye it has been a pleasure and then will exit
 	private void shutDown()
 	{
 		display.displayText("goodbye, " + myBot.getUserName() + " it has been a pleasure good sir/miss");
