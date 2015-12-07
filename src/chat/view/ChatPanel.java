@@ -40,7 +40,7 @@ public class ChatPanel extends JPanel
 		setupListeners();
 	}
 	private void setupLayout()
-	{
+	{//layout of the panel
 		baseLayout.putConstraint(SpringLayout.NORTH, promptLabel, -22, SpringLayout.NORTH, textField);
 		baseLayout.putConstraint(SpringLayout.EAST, promptLabel, 316, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.WEST, promptLabel, 233, SpringLayout.WEST, this);
@@ -57,7 +57,7 @@ public class ChatPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.NORTH, chatArea, 10, SpringLayout.NORTH, this);
 	}
 	private void setupPanel()
-	{
+	{//initialization of variables
 		this.setLayout(baseLayout);
 		this.setBackground(Color.MAGENTA);
 		this.add(chatArea);
@@ -69,7 +69,7 @@ public class ChatPanel extends JPanel
 		chatArea.setEnabled(false);
 	}
 	private void setupListeners()
-	{
+	{//submits userText to The chatArea
 		submitButton.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent click)
@@ -82,7 +82,7 @@ public class ChatPanel extends JPanel
 				chatArea.append("\nChatbot: " + response);
 			}
 		});
-		
+		//Cleared the chatArea
 		resetButton.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent click)
