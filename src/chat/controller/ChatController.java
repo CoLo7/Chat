@@ -9,14 +9,14 @@ import chat.model.Chatbot;
  * @author gagu5735
  * @version 1.11 10/21/15 fixed error 
  */
-
+//Declare Variables 
 public class ChatController 
 {	
 	private Chatbot myBot;
 	private ChatView display;
 	private ChatFrame baseFrame;
 	
-
+//Initialize the Variables
 	public ChatController()
 	{
 		display = new ChatView();
@@ -25,7 +25,9 @@ public class ChatController
 		baseFrame = new ChatFrame(this);
 		
 	}
+	//Displays popup asking user for name
 	public void start()
+	
 	{
 		display.displayText("Hello " + myBot.getUserName());
 		chat();

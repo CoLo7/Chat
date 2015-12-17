@@ -27,7 +27,7 @@ public class Chatbot
 		this.content = "Motivational";
 		
 	}
-	
+	//Builds the Meme List
 	private void buildMemeList()
 	{
 		this.memeList.add("cute animals");
@@ -41,24 +41,20 @@ public class Chatbot
 		this.memeList.add("john cena");
 		this.memeList.add("gaben");
 	}
-	
+	//Builds Political Topic List
 	private void buildPoliticalTopicsList()
 
 	{
 	this.politicalTopicList.add("trump");
 	this.politicalTopicList.add("election");
-	this.politicalTopicList.add("democrat");
-	this.politicalTopicList.add("republican");
-	this.politicalTopicList.add("liberal");
-	this.politicalTopicList.add("conservative");
-	this.politicalTopicList.add("clinton");
-	this.politicalTopicList.add("biden");
+	this.politicalTopicList.add("Democrat");
+	this.politicalTopicList.add("Republican");
 	this.politicalTopicList.add("carson");
 	this.politicalTopicList.add("rubio");
 	this.politicalTopicList.add("fiorina");
 	this.politicalTopicList.add("sanders");
 	this.politicalTopicList.add("vote");
-	this.politicalTopicList.add("11/8/2016");
+	this.politicalTopicList.add("11/4/16");
 	}
 	
 	/**
@@ -92,6 +88,7 @@ public class Chatbot
 		}
 		return hasContent;
 	}
+	//Checks if the user input is quit then it exits program
 	public boolean quitChecker(String currentInput)
 	{
 		Boolean didQuit = false;
@@ -103,15 +100,6 @@ public class Chatbot
 		return didQuit;
 	}
 	
-	public boolean KeyboardMashChecker(String currentInput)
-	{
-		boolean mashTyping = false;
-		if(currentInput.equals("sdf"))
-		{
-			mashTyping = true;
-		}
-		return mashTyping;
-	}
 	/**
 	 * Checks if supplied String matches ANY of the topics in the politicalTopicsList. Returns
 	 * true if it does find a match and false if it does not match.
@@ -151,7 +139,7 @@ public class Chatbot
 		}
 		return hasMeme;
 	}
-	
+	//Takes user input and sees if they inputed sdf, dfg, cvb, or ,./ if one of these is entered it will return stop mashign keyboard
 	public boolean keyboardMashChecker(String currentInput) 
 	{
 		// TODO Auto-generated method stub
@@ -182,7 +170,7 @@ public class Chatbot
 	{
 		return null;
 	}
-	
+	//Takes user input and randomly picks a number through 1-4 to pick What it is going to say next
 	public String processConversation(String currentInput)
 		{
 		String nextConversation = "oh, what else are you interested in talking about today?";
@@ -257,5 +245,21 @@ public class Chatbot
 	public void setContent(String content)
 	{
 		
+	}
+
+
+	public void setMemesList(ArrayList<String> memesList)
+	{
+		this.memeList = memesList;
+	}
+
+	public void setPoliticalTopicList(ArrayList<String> politicalTopicList)
+	{
+		this.politicalTopicList = politicalTopicList;
+	}
+
+	public void setUserName(String userName)
+	{
+		this.userName = userName;
 	}
 }
